@@ -1,4 +1,4 @@
-package com.coloringbook
+package com.babaiyu.coloringbook
 
 import android.app.Application
 import com.facebook.react.PackageList
