@@ -9,6 +9,7 @@ import {
 } from '@shopify/react-native-skia';
 import Animated, {
   useAnimatedStyle,
+  useDerivedValue,
   useSharedValue,
 } from 'react-native-reanimated';
 import React, {useMemo, useState} from 'react';
@@ -134,10 +135,12 @@ export default function PaintingBody() {
     Gesture.Simultaneous(zoomHandler),
   );
 
+  // Painting pen
+  const pathValue = useDerivedValue(() => path.value);
   const paintingPen = useMemo(() => {
     return (
       <Path
-        path={path.value.copy()}
+        path={pathValue}
         strokeWidth={toolSize}
         color={colorTool}
         style="stroke"
@@ -148,9 +151,10 @@ export default function PaintingBody() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [count]);
 
-  const animatedStyles = useAnimatedStyle(() => ({
-    transform: [{scale: scale.value}],
-  }));
+  const animatedStyles = useAnimatedStyle(() => {
+    'worklet';
+    return {transform: [{scale: scale.value}]};
+  });
 
   return (
     <GestureDetector gesture={composedGesture}>
