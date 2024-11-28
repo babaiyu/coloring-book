@@ -42,12 +42,12 @@ export default function PaintingProvider({
     try {
       await requestCameraRoll();
       const img = drawRef.current?.makeImageSnapshot();
-      const jpg = img?.encodeToBase64(ImageFormat.JPEG, 100) || '';
+      const png = img?.encodeToBase64(ImageFormat.PNG, 100) || '';
 
       await RNFS.mkdir(albumPictureDirectoryPath);
 
-      const imgAddress = `${albumPictureDirectoryPath}/${Date.now()}.jpg`;
-      await RNFS.writeFile(imgAddress, jpg, 'base64');
+      const imgAddress = `${albumPictureDirectoryPath}/${Date.now()}.png`;
+      await RNFS.writeFile(imgAddress, png, 'base64');
       await CameraRoll.saveAsset(imgAddress, {
         type: 'photo',
         album,
