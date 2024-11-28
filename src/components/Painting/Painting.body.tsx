@@ -114,6 +114,7 @@ export default function PaintingBody() {
   // For zooming control
   const zoomHandler = Gesture.Pinch()
     .runOnJS(true)
+    .enabled(isZooming.value)
     .onStart(() => {
       isZooming.value = true;
     })
