@@ -1,42 +1,45 @@
-import {useCallback} from 'react';
-import useStoreLines from './useStoreLines';
-import useStoreTools from './useStoreTools';
+// import {useCallback} from 'react';
+// import useStoreLines from './useStoreLines';
+// import useStoreTools from './useStoreTools';
 
-export const useLines = () =>
-  useStoreLines(
-    useCallback(
-      state => ({
-        lines: state.lines,
-        setLines: state.setLines,
-      }),
-      [],
-    ),
-  );
+export {default as useLines} from './useStoreLines';
+export {default as useTools} from './useStoreTools';
 
-export const useTools = () =>
-  useStoreTools(
-    useCallback(
-      state => ({
-        // Eraser mode
-        eraserMode: state.eraserMode,
-        setEraser: state.setEraser,
+// export const useLines = () =>
+//   useStoreLines(
+//     useCallback(
+//       state => ({
+//         lines: state.lines,
+//         setLines: state.setLines,
+//       }),
+//       [],
+//     ),
+//   );
 
-        // Color
-        color: state.color,
-        setColor: state.setColor,
+// export const useTools = () =>
+//   useStoreTools(
+//     useCallback(
+//       state => ({
+//         // Eraser mode
+//         eraserMode: state.eraserMode,
+//         setEraser: state.setEraser,
 
-        // Open color
-        openColor: state.openColor,
-        setOpenColor: state.setOpenColor,
+//         // Color
+//         color: state.color,
+//         setColor: state.setColor,
 
-        // Open brush
-        openBrush: state.openBrush,
-        setOpenBrush: state.setOpenBrush,
+//         // Open color
+//         openColor: state.openColor,
+//         setOpenColor: state.setOpenColor,
 
-        // tool size
-        toolSize: state.toolSize,
-        setToolSize: state.setToolSize,
-      }),
-      [],
-    ),
-  );
+//         // Open brush
+//         openBrush: state.openBrush,
+//         setOpenBrush: state.setOpenBrush,
+
+//         // tool size
+//         toolSize: state.toolSize,
+//         setToolSize: state.setToolSize,
+//       }),
+//       [],
+//     ),
+//   );
