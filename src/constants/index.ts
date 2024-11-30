@@ -4,7 +4,7 @@ export type TypeObject = {
 
 export type TypeObjectNum = {
   [key: string]: number;
-}
+};
 
 export const kidsColors = {
   black: '#222222',

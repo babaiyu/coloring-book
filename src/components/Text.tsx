@@ -3,7 +3,7 @@ import {useStyles} from 'osmicsx';
 import React from 'react';
 import {Text as RNText} from 'react-native';
 import type {TextProps} from 'react-native';
-import { colors } from '../constants';
+import {colors} from '../constants';
 
 interface Props extends TextProps {
   type?: 'EXTRABOLD' | 'BOLD' | 'SEMIBOLD' | 'MEDIUM' | 'REGULAR';

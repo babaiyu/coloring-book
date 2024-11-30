@@ -1,8 +1,11 @@
 import React from 'react';
 import {OsmiProvider} from 'osmicsx';
 import osmiConfig from '../osmi.config';
+import {
+  configureReanimatedLogger,
+  ReanimatedLogLevel,
+} from 'react-native-reanimated';
 import {Navigation} from './screens';
-import { configureReanimatedLogger, ReanimatedLogLevel } from 'react-native-reanimated';
 
 // Config for react-native-reanimated
 configureReanimatedLogger({
