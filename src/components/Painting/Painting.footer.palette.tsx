@@ -21,7 +21,8 @@ function PaintingFooterPalette() {
 
   if (openColor) {
     return (
-      <View style={apply('p-4 absolute z-50 bg-white bottom-0 left-0 border-t')}>
+      <View
+        style={apply('p-4 absolute z-50 bg-white bottom-0 left-0 border-t')}>
         <View style={apply('row justify-between wrap')}>
           {Object.keys(tempKidsColors).map(key => (
             <TouchableOpacity
