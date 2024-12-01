@@ -6,25 +6,22 @@ import ItemCategory from './components/ItemCategory';
 import useController from './useController';
 import HeaderCategory from './components/HeaderCategory';
 
-const DATA = Array.from({length: 100}, (_, index) => ({
-  id: index.toString(),
-  title: `Item ${index + 1}`,
-}));
-
 export default function SearchByCategoryScreen() {
   const flatlistID = useId();
   const {apply} = useStyles();
-  const {onCategoryDetail} = useController();
+  const {loading, categories, onCategoryDetail} = useController();
 
-  const renderItem = () => <ItemCategory onPress={onCategoryDetail} />;
-  const renderHeader = () => <HeaderCategory />;
+  const renderItem = ({item}: {item: any}) => (
+    <ItemCategory item={item} onPress={onCategoryDetail(item)} />
+  );
+  const renderHeader = () => <HeaderCategory isLoading={loading} />;
 
   return (
     <SafeAreaView style={apply('flex')}>
       <FlatList
         id={flatlistID}
         numColumns={2}
-        data={DATA}
+        data={!loading ? categories?.data ?? [] : []}
         keyExtractor={(_item, index) => index.toString()}
         renderItem={renderItem}
         contentContainerStyle={apply(coreStyles.section)}

@@ -1,20 +1,26 @@
 import {useNavigation} from '@react-navigation/native';
 import {Props} from './types';
-import {useEffect} from 'react';
+import {useEffect, useState} from 'react';
+import {useStoreSearch} from '../../stores';
 
 export default function useController({route: {params}}: Props) {
-  const {title = ''} = params;
+  const {title = '', slug} = params;
   const navigation = useNavigation();
+  const {loading, subCategories, getSubCategories} = useStoreSearch();
 
-  // Set title
+  // Pagination
+  const [page] = useState(1);
+
+  // Get sub categories
   useEffect(() => {
-    if (title.length > 0) {
-      navigation.setOptions({
-        headerTitle: `Kategori - ${title}`,
-      });
-    }
+    // Set title header
+    navigation.setOptions({
+      headerTitle: `Kategori - ${title}`,
+    });
+
+    getSubCategories({slug, page});
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [title]);
+  }, [slug, title]);
 
   const onGoCanvas = () => {
     requestAnimationFrame(() => {
@@ -22,5 +28,5 @@ export default function useController({route: {params}}: Props) {
     });
   };
 
-  return {onGoCanvas};
+  return {loading, subCategories, onGoCanvas};
 }
