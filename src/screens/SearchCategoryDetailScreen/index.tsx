@@ -12,7 +12,9 @@ export default function SearchCategoryDetailScreen(props: Props) {
   const {apply} = useStyles();
   const {loading, subCategories, onGoCanvas} = useController(props);
 
-  const renderItem = () => <ItemDetail onPress={onGoCanvas} />;
+  const renderItem = ({item}: {item: any}) => (
+    <ItemDetail item={item} onPress={onGoCanvas} />
+  );
   const renderHeader = () => <HeaderDetail isLoading={loading} />;
 
   return (

@@ -10,6 +10,7 @@ import WelcomeScreen from './WelcomeScreen';
 import SearchByKeywordScreen from './SearchByKeywordScreen';
 import SearchByCategoryScreen from './SearchByCategoryScreen';
 import SearchCategoryDetailScreen from './SearchCategoryDetailScreen';
+import GetAssetIDScreen from './GetAssetIDScreen';
 
 // Root of screen
 const RootStack = createNativeStackNavigator({
@@ -39,6 +40,10 @@ const RootStack = createNativeStackNavigator({
     SEARCH_CATEGORY_DETAIL_SCREEN: {
       screen: SearchCategoryDetailScreen,
       options: {title: ''},
+    },
+    GET_ASSET_ID_SCREEN: {
+      screen: GetAssetIDScreen,
+      options: {headerShown: false},
     },
   },
 });

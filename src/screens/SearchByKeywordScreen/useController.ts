@@ -5,28 +5,28 @@ import {useStoreSearch} from '../../stores';
 
 export default function useController() {
   const navigation = useNavigation();
-  const {loading, searchKeyword} = useStoreSearch();
+  const {loading, imageList, searchKeyword} = useStoreSearch();
 
   // Keyword state
   const [keyword, setKeyword] = useState('');
   const [dKeyword] = useDebounce(keyword, 1000);
 
   // Pagination state
-  // const [page, setPage] = useState()
+  const [page] = useState(1);
 
-  const onGoCanvas = () => {
+  const onProcessingAsset = (resource_id: number) => () => {
     requestAnimationFrame(() => {
-      navigation.navigate('CANVAS_SCREEN');
+      navigation.navigate('GET_ASSET_ID_SCREEN', {resource_id});
     });
   };
 
   // Get data based on dKeyword
   useEffect(() => {
     if (dKeyword.length >= 3) {
-      searchKeyword(dKeyword);
+      searchKeyword({name: dKeyword, page});
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dKeyword]);
 
-  return {loading, onGoCanvas, setKeyword};
+  return {loading, imageList, onProcessingAsset, setKeyword};
 }

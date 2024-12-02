@@ -3,14 +3,12 @@ import {Image, TouchableOpacity, View} from 'react-native';
 import Text from '../../../components/Text';
 import {useStyles} from 'osmicsx';
 
-const IMG_URL =
-  'https://images.unsplash.com/photo-1642403944864-04ad7f092eff?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
-
 interface Props {
+  item: any;
   onPress: () => void;
 }
 
-export default function ItemKeyword({onPress}: Props) {
+export default function ItemKeyword({item, onPress}: Props) {
   const {apply, colors: osmiColors} = useStyles();
   const txtColors = osmiColors('gray-500', 'gray-400');
 
@@ -24,19 +22,24 @@ export default function ItemKeyword({onPress}: Props) {
         'row justify-between',
       )}>
       <Image
-        source={{uri: IMG_URL}}
+        source={{uri: item?.image?.source?.url ?? ''}}
         resizeMode="cover"
-        style={apply('w-100 h-100 rounded-full mr-4')}
+        style={apply('w-100 h-100 mr-4')}
       />
-      <View style={apply('flex-grow')}>
+      <View style={apply('flex-grow justify-between')}>
         <Text type="BOLD" size="LG">
-          Angsa
+          {item?.title ?? ''}
         </Text>
-        <Text numberOfLines={3} color={txtColors[0]}>
-          he most advanced AI features, the largest content library, and
-          everything the future holds—all in one powerful API that you can set
-          up instantly.
-        </Text>
+        <View style={apply('row')}>
+          <Image
+            source={{uri: item?.author?.avatar ?? ''}}
+            resizeMode="cover"
+            style={apply('w-24 h-24 rounded-full mr-2')}
+          />
+          <Text numberOfLines={3} color={txtColors[0]}>
+            {item?.author?.name ?? ''}
+          </Text>
+        </View>
       </View>
     </TouchableOpacity>
   );

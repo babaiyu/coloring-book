@@ -8,12 +8,16 @@ type Line = {
 interface State {
   lines: Line[];
   setLines: (completedPaths: Line[]) => void;
+  reset: () => void;
 }
 
 const useStoreLines = create<State>()(set => ({
   lines: [],
   setLines: lines => {
     set({lines});
+  },
+  reset() {
+    set({lines: []});
   },
 }));
 
