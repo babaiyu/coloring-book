@@ -21,6 +21,9 @@ interface TTools {
   // tool size
   toolSize: number;
   setToolSize: (toolSize: number) => void;
+
+  // Reset
+  reset: () => void;
 }
 
 const useStoreTools = create<TTools>()((set, get) => ({
@@ -55,6 +58,17 @@ const useStoreTools = create<TTools>()((set, get) => ({
   toolSize: toolsSize.small,
   setToolSize(toolSize) {
     set({toolSize});
+  },
+
+  // Reset
+  reset() {
+    set({
+      eraserMode: false,
+      color: colors.black,
+      openColor: false,
+      openBrush: false,
+      toolSize: toolsSize.small,
+    });
   },
 }));
 

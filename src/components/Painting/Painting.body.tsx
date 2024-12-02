@@ -9,7 +9,6 @@ import {
 } from '@shopify/react-native-skia';
 import Animated, {
   useAnimatedStyle,
-  useDerivedValue,
   useSharedValue,
 } from 'react-native-reanimated';
 import React, {useMemo, useState} from 'react';
@@ -136,11 +135,11 @@ export default function PaintingBody() {
   );
 
   // Painting pen
-  const pathValue = useDerivedValue(() => path.value);
+  // const pathValue = useDerivedValue(() => path.value);
   const paintingPen = useMemo(() => {
     return (
       <Path
-        path={pathValue}
+        path={path.value.copy()}
         strokeWidth={toolSize}
         color={colorTool}
         style="stroke"

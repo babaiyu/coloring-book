@@ -7,16 +7,13 @@ import ItemKeyword from './components/ItemKeyword';
 import useController from './useController';
 import HeaderKeyword from './components/HeaderKeyword';
 
-const DATA = Array.from({length: 20}, (_, index) => ({
-  id: index.toString(),
-  title: `Item ${index + 1}`,
-}));
-
 export default function SearchByKeywordScreen() {
   const {apply} = useStyles();
-  const {loading, onGoCanvas, setKeyword} = useController();
+  const {loading, imageList, onProcessingAsset, setKeyword} = useController();
 
-  const renderItem = () => <ItemKeyword onPress={onGoCanvas} />;
+  const renderItem = ({item}: {item: any}) => (
+    <ItemKeyword item={item} onPress={onProcessingAsset(item?.id)} />
+  );
   const renderHeader = () => <HeaderKeyword isLoading={loading} />;
 
   return (
@@ -34,7 +31,7 @@ export default function SearchByKeywordScreen() {
 
       {/* List image */}
       <FlatList
-        data={DATA}
+        data={!loading ? imageList?.data ?? [] : []}
         keyExtractor={(_item, index) => index.toString()}
         renderItem={renderItem}
         contentContainerStyle={apply(coreStyles.section, 'mt-4')}
