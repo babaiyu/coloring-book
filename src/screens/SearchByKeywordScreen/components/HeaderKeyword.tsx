@@ -11,9 +11,11 @@ export default function HeaderKeyword({isLoading}: Props) {
   const {apply} = useStyles();
 
   if (isLoading) {
-    <View style={apply(coreStyles.section)}>
-      <ActivityIndicator size="large" />
-    </View>;
+    return (
+      <View style={apply(coreStyles.section)}>
+        <ActivityIndicator size="large" />
+      </View>
+    );
   }
 
   return null;

@@ -19,7 +19,7 @@ export default function ItemDetail({item, onPress}: Props) {
       style={apply('w%47.5 p-4 mb-4 bg-white shadow rounded-lg')}>
       <Image
         source={{
-          uri: `${BASE_URL}/${item?.image?.formats?.thumbnail?.url ?? ''}`,
+          uri: `${BASE_URL}${item?.image?.formats?.thumbnail?.url ?? ''}`,
         }}
         resizeMode="cover"
         style={apply('w-100 h-100 rounded-full self-center')}

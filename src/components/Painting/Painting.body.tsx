@@ -49,6 +49,7 @@ export default function PaintingBody() {
     toolSize,
     openBrush,
     openColor,
+    isZooming,
     setOpenBrush,
     setOpenColor,
   } = useTools();
@@ -66,13 +67,12 @@ export default function PaintingBody() {
   // Zoom value
   const scale = useSharedValue(1);
   const savedScale = useSharedValue(1);
-  const isZooming = useSharedValue(false);
 
   // For drawing control
   const touchHandler = Gesture.Pan()
     .runOnJS(true)
     .onStart(({x, y}) => {
-      if (shouldPaint && !isZooming.value) {
+      if (shouldPaint && !isZooming) {
         if (openBrush) {
           setOpenBrush();
         }
@@ -89,7 +89,7 @@ export default function PaintingBody() {
       }
     })
     .onChange(({x, y}) => {
-      if (shouldPaint && !isZooming.value) {
+      if (shouldPaint && !isZooming) {
         const lastPt = path.value.getLastPt();
         const xMid = (lastPt.x + x) / 2;
         const yMid = (lastPt.y + y) / 2;
@@ -98,7 +98,7 @@ export default function PaintingBody() {
       }
     })
     .onEnd(() => {
-      if (shouldPaint && !isZooming.value) {
+      if (shouldPaint && !isZooming) {
         const valuePath = {
           path: path.value.copy(),
           paint: paint.value.copy(),
@@ -114,9 +114,9 @@ export default function PaintingBody() {
   // For zooming control
   const zoomHandler = Gesture.Pinch()
     .runOnJS(true)
-    .enabled(isZooming.value)
+    .enabled(isZooming)
     .onStart(() => {
-      isZooming.value = true;
+      // isZooming.value = true;
     })
     .onUpdate(e => {
       const tempScale = savedScale.value * e.scale;
@@ -126,7 +126,7 @@ export default function PaintingBody() {
     })
     .onEnd(() => {
       savedScale.value = scale.value;
-      isZooming.value = false;
+      // isZooming.value = false;
     });
 
   const composedGesture = Gesture.Simultaneous(
