@@ -15,7 +15,7 @@ export default function PaintingHeader() {
   const {apply} = useStyles();
   const {reset: resetLines} = useLines();
   const navigation = useNavigation();
-  const {saveImage} = usePaintingContext();
+  const {saveImage, history} = usePaintingContext();
 
   // On back
   const onGoBack = () => {
@@ -27,6 +27,7 @@ export default function PaintingHeader() {
   // On reset
   const onReset = () => {
     requestAnimationFrame(() => {
+      history.clear();
       resetLines();
     });
   };
@@ -36,6 +37,16 @@ export default function PaintingHeader() {
     requestAnimationFrame(async () => {
       await saveImage();
     });
+  };
+
+  // On undo history
+  const onUndoHistory = () => {
+    history.undo();
+  };
+
+  // On redo history
+  const onRedoHistory = () => {
+    history.redo();
   };
 
   return (
@@ -52,10 +63,10 @@ export default function PaintingHeader() {
       <TouchableOpacity activeOpacity={0.75} onPress={onReset}>
         <Icon name="trash-can" color={colors.black} size={32} />
       </TouchableOpacity>
-      <TouchableOpacity activeOpacity={0.75}>
+      <TouchableOpacity activeOpacity={0.75} onPress={onUndoHistory}>
         <Icon name="arrow-rotate-left" color={colors.black} size={32} />
       </TouchableOpacity>
-      <TouchableOpacity activeOpacity={0.75}>
+      <TouchableOpacity activeOpacity={0.75} onPress={onRedoHistory}>
         <Icon name="arrow-rotate-right" color={colors.black} size={32} />
       </TouchableOpacity>
       <TouchableOpacity activeOpacity={0.75} onPress={onSaveImage}>

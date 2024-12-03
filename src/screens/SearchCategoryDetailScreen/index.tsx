@@ -10,10 +10,10 @@ import HeaderDetail from './components/HeaderDetail';
 export default function SearchCategoryDetailScreen(props: Props) {
   const flatlistID = useId();
   const {apply} = useStyles();
-  const {loading, subCategories, onGoCanvas} = useController(props);
+  const {loading, subCategories, onSearchKeyword} = useController(props);
 
   const renderItem = ({item}: {item: any}) => (
-    <ItemDetail item={item} onPress={onGoCanvas} />
+    <ItemDetail item={item} onPress={onSearchKeyword(item)} />
   );
   const renderHeader = () => <HeaderDetail isLoading={loading} />;
 

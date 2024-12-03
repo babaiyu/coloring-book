@@ -22,11 +22,14 @@ export default function useController({route: {params}}: Props) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [slug, title]);
 
-  const onGoCanvas = () => {
+  const onSearchKeyword = (item: any) => () => {
     requestAnimationFrame(() => {
-      navigation.navigate('CANVAS_SCREEN');
+      // navigation.navigate('CANVAS_SCREEN');
+      navigation.navigate('SEARCH_BY_KEYWORD_SCREEN', {
+        keyword: item?.title ?? '',
+      });
     });
   };
 
-  return {loading, subCategories, onGoCanvas};
+  return {loading, subCategories, onSearchKeyword};
 }

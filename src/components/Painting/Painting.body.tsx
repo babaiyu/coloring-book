@@ -39,7 +39,7 @@ const drawHeight = clamValue({
 
 // Main component
 export default function PaintingBody() {
-  const {bareImage, drawRef} = usePaintingContext();
+  const {bareImage, drawRef, history} = usePaintingContext();
   const {lines, setLines} = useLines();
   const {apply} = useStyles();
 
@@ -67,6 +67,9 @@ export default function PaintingBody() {
   // Zoom value
   const scale = useSharedValue(1);
   const savedScale = useSharedValue(1);
+
+  // Drag value
+  const drag = useSharedValue({dragX: 0, dragY: 0});
 
   // For drawing control
   const touchHandler = Gesture.Pan()
@@ -104,6 +107,7 @@ export default function PaintingBody() {
           paint: paint.value.copy(),
         };
         setLines([...lines, valuePath]);
+        history.push(valuePath);
         path.value.reset();
         paint.value.reset();
         setCount(0);
@@ -129,9 +133,24 @@ export default function PaintingBody() {
       // isZooming.value = false;
     });
 
+  // For dragging control
+  const dragHandler = Gesture.Pan()
+    .runOnJS(true)
+    .enabled(isZooming)
+    .onStart(e => {
+      drag.value = {dragX: e.translationX, dragY: e.translationY};
+    })
+    .onUpdate(e => {
+      drag.value = {dragX: e.translationX, dragY: e.translationY};
+    });
+
   const composedGesture = Gesture.Simultaneous(
+    // touchHandler,
+    // Gesture.Simultaneous(zoomHandler),
+    // Gesture.Pan(dragHandler),
     touchHandler,
-    Gesture.Simultaneous(zoomHandler),
+    zoomHandler,
+    dragHandler,
   );
 
   // Painting pen
@@ -152,7 +171,15 @@ export default function PaintingBody() {
 
   const animatedStyles = useAnimatedStyle(() => {
     'worklet';
-    return {transform: [{scale: scale.value}]};
+    return {
+      transform: [
+        {scale: scale.value},
+        {translateX: drag.value.dragX},
+        {translateY: drag.value.dragY},
+        // {skewX: drag.value.dragX},
+        // {skewY: drag.value.dragY},
+      ],
+    };
   });
 
   return (
