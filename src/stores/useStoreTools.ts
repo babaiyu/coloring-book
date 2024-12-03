@@ -22,6 +22,10 @@ interface TTools {
   toolSize: number;
   setToolSize: (toolSize: number) => void;
 
+  // Zooming canvas
+  isZooming: boolean;
+  setIsZooming: () => void;
+
   // Reset
   reset: () => void;
 }
@@ -31,7 +35,10 @@ const useStoreTools = create<TTools>()((set, get) => ({
   eraserMode: false,
   setEraser() {
     const {eraserMode} = get();
-    set({eraserMode: !eraserMode, color: colors.white});
+    set({
+      eraserMode: !eraserMode,
+      color: !eraserMode ? colors.white : colors.black,
+    });
   },
 
   // Color
@@ -60,6 +67,13 @@ const useStoreTools = create<TTools>()((set, get) => ({
     set({toolSize});
   },
 
+  // Zooming canvas
+  isZooming: false,
+  setIsZooming() {
+    const {isZooming} = get();
+    set({isZooming: !isZooming});
+  },
+
   // Reset
   reset() {
     set({
@@ -68,6 +82,7 @@ const useStoreTools = create<TTools>()((set, get) => ({
       openColor: false,
       openBrush: false,
       toolSize: toolsSize.small,
+      isZooming: false,
     });
   },
 }));

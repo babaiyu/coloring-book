@@ -2244,16 +2244,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@dr.pogodin/react-native-fs@npm:2.30.0":
-  version: 2.30.0
-  resolution: "@dr.pogodin/react-native-fs@npm:2.30.0"
+"@dr.pogodin/react-native-fs@npm:2.30.1":
+  version: 2.30.1
+  resolution: "@dr.pogodin/react-native-fs@npm:2.30.1"
   dependencies:
     buffer: ^6.0.3
     http-status-codes: ^2.3.0
   peerDependencies:
     react: "*"
     react-native: "*"
-  checksum: 1ae173f13be2259dc10ba4fec383729e945c7c9a6b50cfbb792b09a5c07c8dd08e30e90a86298ea727a773480be860d0abbf1bb111b0ce7acf471e3b787ef7cb
+  checksum: 44b5885313726a49af98b45134819c3cb7f89c1497c6b6c06387b3fa30f644ee885082bc7e42cdccdd1a86b14355065d81605d5e369fb96ab19ef2ccb0e407be
   languageName: node
   linkType: hard
 
@@ -2946,6 +2946,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@react-native-community/slider@npm:4.5.5":
+  version: 4.5.5
+  resolution: "@react-native-community/slider@npm:4.5.5"
+  checksum: 8d818e7f505694269bf8009c8c5db89efc3e9bb56054a1835613b6d7431356370bef9ce23d269519163097fe506e3f5420b34ba2c553bf380d1f144277a11942
+  languageName: node
+  linkType: hard
+
 "@react-native/assets-registry@npm:0.76.3":
   version: 0.76.3
   resolution: "@react-native/assets-registry@npm:0.76.3"
@@ -3187,11 +3194,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-navigation/core@npm:^7.1.1":
-  version: 7.1.1
-  resolution: "@react-navigation/core@npm:7.1.1"
+"@react-navigation/core@npm:^7.2.2":
+  version: 7.2.2
+  resolution: "@react-navigation/core@npm:7.2.2"
   dependencies:
-    "@react-navigation/routers": ^7.1.0
+    "@react-navigation/routers": ^7.1.1
     escape-string-regexp: ^4.0.0
     nanoid: 3.3.7
     query-string: ^7.1.3
@@ -3200,49 +3207,49 @@ __metadata:
     use-sync-external-store: ^1.2.2
   peerDependencies:
     react: ">= 18.2.0"
-  checksum: 5f2ecfd8e138f2028581354273eddfc5e4e800dc9b58aac4effc000ae688a3a10c2c4d661d1bddc6fbebfeffed8a46c1c8fca16b65b84fec0af1726aefcd8d88
+  checksum: 86c6005ba5fd021b9867f76d09303b98d8fa07ed96234d5d246e6833df6c525ba07d129fc9ae57098d7eb7719d95a8f62695cb737dd2112430f4252f9fdafeee
   languageName: node
   linkType: hard
 
-"@react-navigation/elements@npm:2.1.7, @react-navigation/elements@npm:^2.1.7":
-  version: 2.1.7
-  resolution: "@react-navigation/elements@npm:2.1.7"
+"@react-navigation/elements@npm:2.2.3, @react-navigation/elements@npm:^2.2.3":
+  version: 2.2.3
+  resolution: "@react-navigation/elements@npm:2.2.3"
   dependencies:
     color: ^4.2.3
   peerDependencies:
     "@react-native-masked-view/masked-view": ">= 0.2.0"
-    "@react-navigation/native": ^7.0.8
+    "@react-navigation/native": ^7.0.12
     react: ">= 18.2.0"
     react-native: "*"
     react-native-safe-area-context: ">= 4.0.0"
   peerDependenciesMeta:
     "@react-native-masked-view/masked-view":
       optional: true
-  checksum: 79e0789e5fcfa3cb43f3b1fe88c6dff43997ef2799d558f935a2fe5b60a4fbe135115b3dab3063ee8ef0f0009cf6829e9ceadac576d7e6f5f5382331d91648c4
+  checksum: e4909effe4ccc81a2445ffe5ea472dffd663a8e41e98f5af0a9217ab091018a994cb9d906d78157e80eb6a913a4e34b7d2e9d17cef3ccaea9d94539c01242d61
   languageName: node
   linkType: hard
 
-"@react-navigation/native-stack@npm:7.1.9":
-  version: 7.1.9
-  resolution: "@react-navigation/native-stack@npm:7.1.9"
+"@react-navigation/native-stack@npm:7.1.13":
+  version: 7.1.13
+  resolution: "@react-navigation/native-stack@npm:7.1.13"
   dependencies:
-    "@react-navigation/elements": ^2.1.7
+    "@react-navigation/elements": ^2.2.3
     warn-once: ^0.1.1
   peerDependencies:
-    "@react-navigation/native": ^7.0.8
+    "@react-navigation/native": ^7.0.12
     react: ">= 18.2.0"
     react-native: "*"
     react-native-safe-area-context: ">= 4.0.0"
     react-native-screens: ">= 4.0.0"
-  checksum: 6679fedbc31719d77ced18ae3166fcc81978d8ccfb311bfd6b68166292d774aea6eac81eea7fc3b4179146aac1be3aad1050fbc1328d89f641c0789db756e52a
+  checksum: 273f701d789744e6c91249673118ce0a04814bd92bd75541a459bca785cd96b8f80c2d05d5e1a571468f1c3e70351d36d327ddf719d8858fd7b259a0a7e99d30
   languageName: node
   linkType: hard
 
-"@react-navigation/native@npm:7.0.8":
-  version: 7.0.8
-  resolution: "@react-navigation/native@npm:7.0.8"
+"@react-navigation/native@npm:7.0.12":
+  version: 7.0.12
+  resolution: "@react-navigation/native@npm:7.0.12"
   dependencies:
-    "@react-navigation/core": ^7.1.1
+    "@react-navigation/core": ^7.2.2
     escape-string-regexp: ^4.0.0
     fast-deep-equal: ^3.1.3
     nanoid: 3.3.7
@@ -3250,22 +3257,22 @@ __metadata:
   peerDependencies:
     react: ">= 18.2.0"
     react-native: "*"
-  checksum: eb25fd5da6d198b6cd8ae87309d8a172bafb5ec0d03c1a68cba5641bb62d130fefce86bf378ce6dda5f29fcb916faacc30a0a7e19ca22e9c68cc21a5aefaed39
+  checksum: ebb1e6c7e4cde108c52a3d26256ac79bf341bf307c7bdbb646bc97c4be6f2a7e87b00af0d54f17bcbe02369d14409d5bb82609da3902638a463bc7d1e80a328b
   languageName: node
   linkType: hard
 
-"@react-navigation/routers@npm:^7.1.0":
-  version: 7.1.0
-  resolution: "@react-navigation/routers@npm:7.1.0"
+"@react-navigation/routers@npm:^7.1.1":
+  version: 7.1.1
+  resolution: "@react-navigation/routers@npm:7.1.1"
   dependencies:
     nanoid: 3.3.7
-  checksum: 92de5679887b0b8498810ec705e22f62e673ae1e5582cf3d813b8cbca5528bc894a532988e24e178724f6dfe26f42572dc88cd4e5af8ac90f61669a095047be6
+  checksum: 8f47aefd2a5104bdc66719eac907c0a1c9f16b68d5631e1ae52097a038f092552b4d28db244e6b9f7e4bac8ef8155c6eb5d357b670f2f102475d444fba84edb9
   languageName: node
   linkType: hard
 
-"@shopify/react-native-skia@npm:1.5.10":
-  version: 1.5.10
-  resolution: "@shopify/react-native-skia@npm:1.5.10"
+"@shopify/react-native-skia@npm:1.6.0":
+  version: 1.6.0
+  resolution: "@shopify/react-native-skia@npm:1.6.0"
   dependencies:
     canvaskit-wasm: 0.39.1
     react-reconciler: 0.27.0
@@ -3280,7 +3287,7 @@ __metadata:
       optional: true
   bin:
     setup-skia-web: ./scripts/setup-canvaskit.js
-  checksum: fd91e642fad4624a93222fd2500f9cf5c079eab3485c84d768380924c5b5cd789cd295062904664243ec1c9c5ae88c6d1098b96f09e29569ab2989f32fcc3167
+  checksum: 88abc446541a2310143c346c29ab7dedd5b3b21bc85f3d54db35c14c96c084c70d7c487bc98ab4db510d8690f16ac68d62a2c022ebc6389a29eafb8f0089b4eb
   languageName: node
   linkType: hard
 
@@ -4710,19 +4717,20 @@ __metadata:
     "@babel/core": ^7.25.2
     "@babel/preset-env": ^7.25.3
     "@babel/runtime": ^7.25.0
-    "@dr.pogodin/react-native-fs": 2.30.0
+    "@dr.pogodin/react-native-fs": 2.30.1
     "@react-native-camera-roll/camera-roll": 7.9.0
     "@react-native-community/cli": 15.0.1
     "@react-native-community/cli-platform-android": 15.0.1
     "@react-native-community/cli-platform-ios": 15.0.1
+    "@react-native-community/slider": 4.5.5
     "@react-native/babel-preset": 0.76.3
     "@react-native/eslint-config": 0.76.3
     "@react-native/metro-config": 0.76.3
     "@react-native/typescript-config": 0.76.3
-    "@react-navigation/elements": 2.1.7
-    "@react-navigation/native": 7.0.8
-    "@react-navigation/native-stack": 7.1.9
-    "@shopify/react-native-skia": 1.5.10
+    "@react-navigation/elements": 2.2.3
+    "@react-navigation/native": 7.0.12
+    "@react-navigation/native-stack": 7.1.13
+    "@shopify/react-native-skia": 1.6.0
     "@types/qs": 6.9.17
     "@types/react": ^18.2.6
     "@types/react-native-vector-icons": 6.4.18
@@ -4740,7 +4748,7 @@ __metadata:
     react: 18.3.1
     react-native: 0.76.3
     react-native-gesture-handler: 2.21.2
-    react-native-permissions: 5.2.0
+    react-native-permissions: 5.2.1
     react-native-reanimated: 3.16.3
     react-native-safe-area-context: 4.14.0
     react-native-screens: 4.3.0
@@ -9046,9 +9054,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-permissions@npm:5.2.0":
-  version: 5.2.0
-  resolution: "react-native-permissions@npm:5.2.0"
+"react-native-permissions@npm:5.2.1":
+  version: 5.2.1
+  resolution: "react-native-permissions@npm:5.2.1"
   peerDependencies:
     react: ">=18.1.0"
     react-native: ">=0.70.0"
@@ -9056,7 +9064,7 @@ __metadata:
   peerDependenciesMeta:
     react-native-windows:
       optional: true
-  checksum: e1cbc4e5cac032e490ba2d3597b85d169693047785196eca1f56377d775690f7940dbaf81196255a3775a2c0bf8e5cb2c0b808679f014622b76c0b7753452001
+  checksum: a57b0a6c71c38bb126e48e76b8eef7e62bee8083d748ec1cf7e7b5699d46867b10e96a02837c45a045b77dab37e45a5c20b1deb3637ad5cee963c9e92c6ee05a
   languageName: node
   linkType: hard
 
