@@ -25,6 +25,7 @@ export default function PaintingFooter() {
     toolSize,
     color,
     setEraser,
+    clearEraser,
     setColor,
     setIsZooming,
     setToolSize,
@@ -37,8 +38,17 @@ export default function PaintingFooter() {
     });
   };
 
+  // Choose the color
+  const onChooseColor = (selectedColor: string) => {
+    requestAnimationFrame(() => {
+      setColor(selectedColor);
+      // When click the color, eraserMode should be false!
+      clearEraser();
+    });
+  };
+
   const renderColors = ({item}: {item: string}) => (
-    <ColorItem item={item} onPress={setColor} />
+    <ColorItem item={item} onPress={onChooseColor} />
   );
 
   return (

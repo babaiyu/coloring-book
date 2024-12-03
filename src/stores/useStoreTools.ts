@@ -5,6 +5,7 @@ interface TTools {
   // Eraser
   eraserMode: boolean;
   setEraser: () => void;
+  clearEraser: () => void;
 
   // Color
   color: string;
@@ -39,6 +40,9 @@ const useStoreTools = create<TTools>()((set, get) => ({
       eraserMode: !eraserMode,
       color: !eraserMode ? colors.white : colors.black,
     });
+  },
+  clearEraser() {
+    set({eraserMode: false});
   },
 
   // Color

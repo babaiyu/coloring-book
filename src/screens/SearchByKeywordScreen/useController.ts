@@ -2,9 +2,11 @@ import {useNavigation} from '@react-navigation/native';
 import {useEffect, useState} from 'react';
 import {useDebounce} from 'use-debounce';
 import {useStoreSearch} from '../../stores';
+import {Props} from './types';
 
-export default function useController() {
+export default function useController({route: {params}}: Props) {
   const navigation = useNavigation();
+  const paramKeyword = params?.keyword ?? '';
   const {loading, imageList, searchKeyword} = useStoreSearch();
 
   // Keyword state
@@ -20,6 +22,17 @@ export default function useController() {
     });
   };
 
+  // Set keyword when from category screen
+  useEffect(() => {
+    if ((paramKeyword ?? '').length >= 3) {
+      setKeyword(paramKeyword ?? '');
+      navigation.setOptions({
+        headerTitle: paramKeyword,
+      });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [paramKeyword]);
+
   // Get data based on dKeyword
   useEffect(() => {
     if (dKeyword.length >= 3) {
@@ -28,5 +41,5 @@ export default function useController() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dKeyword]);
 
-  return {loading, imageList, onProcessingAsset, setKeyword};
+  return {loading, imageList, keyword, onProcessingAsset, setKeyword};
 }
