@@ -15,7 +15,11 @@ const osmiConfig = {
   },
   font: {
     family: {
-      // font family
+      regular: 'Gluten-Regular',
+      medium: 'Gluten-Medium',
+      semibold: 'Gluten-SemiBold',
+      bold: 'Gluten-Bold',
+      extrabold: 'Gluten-ExtraBold',
     },
     size: {
       // font size

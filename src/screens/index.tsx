@@ -19,6 +19,9 @@ const RootStack = createNativeStackNavigator({
     navigationBarHidden: true,
     statusBarHidden: true,
     animation: 'ios_from_right',
+    headerTitleStyle: {
+      fontFamily: 'Gluten-Bold',
+    },
   },
   screens: {
     WELCOME_SCREEN: {

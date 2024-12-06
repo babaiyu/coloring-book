@@ -16,6 +16,11 @@
 		7699B88040F8A987B510C191 /* libPods-coloringbook-coloringbookTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-coloringbook-coloringbookTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		B0F6F9DA2CF3595D00AA7E32 /* libRNCCameraRoll.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B0F6F9D92CF3591900AA7E32 /* libRNCCameraRoll.a */; };
+		4D7456FA1EBB4B5AB1ABF24D /* Gluten-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2E7C5FE881ED4BF793E5CE4B /* Gluten-Bold.ttf */; };
+		A2A9655DD9C54F9F85664A56 /* Gluten-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5BBE60689DF64528ADEAFD6B /* Gluten-ExtraBold.ttf */; };
+		D6671BEBCB3E4C9DA9A13119 /* Gluten-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8F2F9DC3A6AD4F8597A81827 /* Gluten-Medium.ttf */; };
+		F38BEB2D2D0F42DAB0976DFC /* Gluten-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0FA895D0B93A4141ACC256ED /* Gluten-Regular.ttf */; };
+		02ABC43654DC4B489859853D /* Gluten-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 51F0016A886D4066A8DD1D18 /* Gluten-SemiBold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +60,11 @@
 		89C6BE57DB24E9ADA2F236DE /* Pods-coloringbook-coloringbookTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-coloringbook-coloringbookTests.release.xcconfig"; path = "Target Support Files/Pods-coloringbook-coloringbookTests/Pods-coloringbook-coloringbookTests.release.xcconfig"; sourceTree = "<group>"; };
 		B0F6F9D22CF3591800AA7E32 /* RNCCameraRoll.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNCCameraRoll.xcodeproj; path = "../node_modules/@react-native-camera-roll/camera-roll/ios/RNCCameraRoll.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		2E7C5FE881ED4BF793E5CE4B /* Gluten-Bold.ttf */ = {isa = PBXFileReference; name = "Gluten-Bold.ttf"; path = "../src/assets/fonts/Gluten-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5BBE60689DF64528ADEAFD6B /* Gluten-ExtraBold.ttf */ = {isa = PBXFileReference; name = "Gluten-ExtraBold.ttf"; path = "../src/assets/fonts/Gluten-ExtraBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8F2F9DC3A6AD4F8597A81827 /* Gluten-Medium.ttf */ = {isa = PBXFileReference; name = "Gluten-Medium.ttf"; path = "../src/assets/fonts/Gluten-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		0FA895D0B93A4141ACC256ED /* Gluten-Regular.ttf */ = {isa = PBXFileReference; name = "Gluten-Regular.ttf"; path = "../src/assets/fonts/Gluten-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		51F0016A886D4066A8DD1D18 /* Gluten-SemiBold.ttf */ = {isa = PBXFileReference; name = "Gluten-SemiBold.ttf"; path = "../src/assets/fonts/Gluten-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +146,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				B5282AC040B04B93A1D917DF /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -169,6 +180,19 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		B5282AC040B04B93A1D917DF /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				2E7C5FE881ED4BF793E5CE4B /* Gluten-Bold.ttf */,
+				5BBE60689DF64528ADEAFD6B /* Gluten-ExtraBold.ttf */,
+				8F2F9DC3A6AD4F8597A81827 /* Gluten-Medium.ttf */,
+				0FA895D0B93A4141ACC256ED /* Gluten-Regular.ttf */,
+				51F0016A886D4066A8DD1D18 /* Gluten-SemiBold.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -282,6 +306,11 @@
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				0605D9F37545CB69FD4ADEB3 /* PrivacyInfo.xcprivacy in Resources */,
+				4D7456FA1EBB4B5AB1ABF24D /* Gluten-Bold.ttf in Resources */,
+				A2A9655DD9C54F9F85664A56 /* Gluten-ExtraBold.ttf in Resources */,
+				D6671BEBCB3E4C9DA9A13119 /* Gluten-Medium.ttf in Resources */,
+				F38BEB2D2D0F42DAB0976DFC /* Gluten-Regular.ttf in Resources */,
+				02ABC43654DC4B489859853D /* Gluten-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

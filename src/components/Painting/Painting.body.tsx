@@ -70,6 +70,7 @@ export default function PaintingBody() {
 
   // Drag value
   const drag = useSharedValue({dragX: 0, dragY: 0});
+  const startDrag = useSharedValue({dragX: 0, dragY: 0});
 
   // For drawing control
   const touchHandler = Gesture.Pan()
@@ -119,9 +120,6 @@ export default function PaintingBody() {
   const zoomHandler = Gesture.Pinch()
     .runOnJS(true)
     .enabled(isZooming)
-    .onStart(() => {
-      // isZooming.value = true;
-    })
     .onUpdate(e => {
       const tempScale = savedScale.value * e.scale;
       if (tempScale >= 1) {
@@ -130,31 +128,33 @@ export default function PaintingBody() {
     })
     .onEnd(() => {
       savedScale.value = scale.value;
-      // isZooming.value = false;
     });
 
   // For dragging control
   const dragHandler = Gesture.Pan()
     .runOnJS(true)
     .enabled(isZooming)
-    .onStart(e => {
-      drag.value = {dragX: e.translationX, dragY: e.translationY};
-    })
     .onUpdate(e => {
-      drag.value = {dragX: e.translationX, dragY: e.translationY};
-    });
+      drag.value = {
+        dragX: e.translationX + startDrag.value.dragX,
+        dragY: e.translationY + startDrag.value.dragY,
+      };
+    })
+    .onEnd(() => {
+      startDrag.value = {
+        dragX: drag.value.dragX,
+        dragY: drag.value.dragY,
+      };
+    })
+    .minDistance(1);
 
   const composedGesture = Gesture.Simultaneous(
-    // touchHandler,
-    // Gesture.Simultaneous(zoomHandler),
-    // Gesture.Pan(dragHandler),
     touchHandler,
     zoomHandler,
     dragHandler,
   );
 
   // Painting pen
-  // const pathValue = useDerivedValue(() => path.value);
   const paintingPen = useMemo(() => {
     return (
       <Path
@@ -176,8 +176,6 @@ export default function PaintingBody() {
         {scale: scale.value},
         {translateX: drag.value.dragX},
         {translateY: drag.value.dragY},
-        // {skewX: drag.value.dragX},
-        // {skewY: drag.value.dragY},
       ],
     };
   });

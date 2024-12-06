@@ -19,6 +19,8 @@ export default function SearchByKeywordScreen(props: Props) {
   );
   const renderHeader = () => <HeaderKeyword isLoading={loading} />;
 
+  const renderFooter = () => <View style={apply('w%100 h-50')} />;
+
   return (
     <SafeAreaView style={apply('flex')}>
       <View style={apply(coreStyles.section)} />
@@ -41,6 +43,7 @@ export default function SearchByKeywordScreen(props: Props) {
         renderItem={renderItem}
         contentContainerStyle={apply(coreStyles.section, 'mt-4')}
         ListHeaderComponent={renderHeader}
+        ListFooterComponent={renderFooter}
       />
     </SafeAreaView>
   );

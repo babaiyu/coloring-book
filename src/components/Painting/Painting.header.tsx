@@ -2,7 +2,7 @@ import React from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome6';
 import {colors} from '../../constants';
 import {useStyles} from 'osmicsx';
-import {Platform, View} from 'react-native';
+import {Alert, Platform, View} from 'react-native';
 import {TouchableOpacity} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {useLines} from '../../stores';
@@ -20,7 +20,23 @@ export default function PaintingHeader() {
   // On back
   const onGoBack = () => {
     requestAnimationFrame(() => {
-      navigation.goBack();
+      Alert.alert(
+        'Tunggu Sebentar!',
+        'Anda yakin ingin keluar? Semua akan terhapus apabila Anda keluar sekarang!',
+        [
+          {
+            text: 'Batal',
+            onPress: () => null,
+            style: 'cancel',
+          },
+          {
+            text: 'Ya, Keluar!',
+            onPress: () => {
+              navigation.goBack();
+            },
+          },
+        ],
+      );
     });
   };
 

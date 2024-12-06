@@ -26,21 +26,25 @@
 	<true/>
 	<key>NSAppTransportSecurity</key>
 	<dict>
-	  <!-- Do not change NSAllowsArbitraryLoads to true, or you will risk app rejection! -->
 		<key>NSAllowsArbitraryLoads</key>
 		<false/>
 		<key>NSAllowsLocalNetworking</key>
 		<true/>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
-  <key>NSPhotoLibraryAddUsageDescription</key>
-  <string>We need access to your library to save images that you create in the app</string>
+	<string/>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>We need access to your library to save images that you create in the app</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>FontAwesome6_Brands.ttf</string>
 		<string>FontAwesome6_Regular.ttf</string>
 		<string>FontAwesome6_Solid.ttf</string>
+		<string>Gluten-Bold.ttf</string>
+		<string>Gluten-ExtraBold.ttf</string>
+		<string>Gluten-Medium.ttf</string>
+		<string>Gluten-Regular.ttf</string>
+		<string>Gluten-SemiBold.ttf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
