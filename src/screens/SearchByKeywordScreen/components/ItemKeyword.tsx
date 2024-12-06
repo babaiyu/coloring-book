@@ -18,7 +18,7 @@ export default function ItemKeyword({item, onPress}: Props) {
       activeOpacity={0.75}
       style={apply(
         'h-130',
-        'mb-4 px-2 py-4 bg-white rounded-lg shadow',
+        'mb-4 px-2 py-4 bg-white rounded-lg shadow-sm',
         'row justify-between',
       )}>
       <Image

@@ -1,0 +1,25 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/assets/fonts/Gluten-Bold.ttf",
+      "sha1": "3f966b297327b498b8991b86ee60a5dfedf0ddca"
+    },
+    {
+      "path": "src/assets/fonts/Gluten-ExtraBold.ttf",
+      "sha1": "715b50f9e400893c9818c6f1a74fa618b78bff59"
+    },
+    {
+      "path": "src/assets/fonts/Gluten-Medium.ttf",
+      "sha1": "b947e82c2b4bd90b383a131911e3457809e2141f"
+    },
+    {
+      "path": "src/assets/fonts/Gluten-Regular.ttf",
+      "sha1": "3dacd9520526c5bc55a6f366b351260ac9ad245b"
+    },
+    {
+      "path": "src/assets/fonts/Gluten-SemiBold.ttf",
+      "sha1": "5f3f180f370d8a816d4016e08bae14335052a692"
+    }
+  ]
+}
