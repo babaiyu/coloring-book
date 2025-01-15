@@ -6,6 +6,7 @@ export type TypeObjectNum = {
   [key: string]: number;
 };
 
+// Color list
 export const kidsColors = {
   black: '#222222',
   'bright-red': '#FF4C4C',

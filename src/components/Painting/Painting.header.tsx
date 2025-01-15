@@ -1,5 +1,5 @@
 import React from 'react';
-import Icon from 'react-native-vector-icons/FontAwesome6';
+import Icon from '@react-native-vector-icons/fontawesome6';
 import {colors} from '../../constants';
 import {useStyles} from 'osmicsx';
 import {Alert, Platform, View} from 'react-native';
@@ -80,13 +80,28 @@ export default function PaintingHeader() {
         <Icon name="trash-can" color={colors.black} size={32} />
       </TouchableOpacity>
       <TouchableOpacity activeOpacity={0.75} onPress={onUndoHistory}>
-        <Icon name="arrow-rotate-left" color={colors.black} size={32} />
+        <Icon
+          name="arrow-rotate-left"
+          iconStyle="solid"
+          color={colors.black}
+          size={32}
+        />
       </TouchableOpacity>
       <TouchableOpacity activeOpacity={0.75} onPress={onRedoHistory}>
-        <Icon name="arrow-rotate-right" color={colors.black} size={32} />
+        <Icon
+          name="arrow-rotate-right"
+          iconStyle="solid"
+          color={colors.black}
+          size={32}
+        />
       </TouchableOpacity>
       <TouchableOpacity activeOpacity={0.75} onPress={onSaveImage}>
-        <Icon name="download" color={colors.black} size={32} />
+        <Icon
+          name="download"
+          iconStyle="solid"
+          color={colors.black}
+          size={32}
+        />
       </TouchableOpacity>
     </View>
   );

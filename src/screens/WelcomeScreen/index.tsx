@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome6';
+import Icon from '@react-native-vector-icons/fontawesome6';
 import Text from '../../components/Text';
 import {coreStyles} from '../../styles';
 import {colors} from '../../constants';
@@ -18,7 +18,7 @@ export default function WelcomeScreen() {
   const {onSearchByKey, onSearchByCategory} = useController();
 
   return (
-    <SafeAreaView style={apply('flex')}>
+    <SafeAreaView style={apply('flex col justify-between')}>
       <ScrollView>
         <View style={apply(coreStyles.section)} />
         <View style={apply(coreStyles.section)} />
@@ -32,7 +32,7 @@ export default function WelcomeScreen() {
         <View style={apply(coreStyles.section)}>
           <Image
             source={require('../../assets/kucing_outline.png')}
-            resizeMode="cover"
+            resizeMode="contain"
             style={apply('w%100 h/50')}
           />
         </View>
@@ -58,7 +58,12 @@ export default function WelcomeScreen() {
             <Text size="SM" color={colors.white}>
               Kata Kunci
             </Text>
-            <Icon name="arrow-right-long" size={12} color={colors.white} />
+            <Icon
+              name="arrow-right-long"
+              iconStyle="solid"
+              size={12}
+              color={colors.white}
+            />
           </TouchableOpacity>
           <TouchableOpacity
             activeOpacity={0.75}
@@ -69,7 +74,12 @@ export default function WelcomeScreen() {
             <Text size="SM" color={colors.white}>
               Kategori
             </Text>
-            <Icon name="arrow-right-long" size={12} color={colors.white} />
+            <Icon
+              name="arrow-right-long"
+              iconStyle="solid"
+              size={12}
+              color={colors.white}
+            />
           </TouchableOpacity>
         </View>
       </ScrollView>
