@@ -14,7 +14,25 @@ export default function useController({route: {params}}: Props) {
   const [dKeyword] = useDebounce(keyword, 1000);
 
   // Pagination state
-  const [page] = useState(1);
+  const [page, setPage] = useState(1);
+  const [dPage] = useDebounce(page, 1000);
+
+  const onPrev = () => {
+    requestAnimationFrame(() => {
+      setPage(v => v - 1);
+    });
+  };
+
+  const onNext = () => {
+    requestAnimationFrame(() => {
+      setPage(v => v + 1);
+    });
+  };
+
+  const onSetKeyword = (txt: string) => {
+    setKeyword(txt);
+    setPage(1);
+  };
 
   const onProcessingAsset = (resource_id: number) => () => {
     requestAnimationFrame(() => {
@@ -36,10 +54,19 @@ export default function useController({route: {params}}: Props) {
   // Get data based on dKeyword
   useEffect(() => {
     if (dKeyword.length >= 3) {
-      searchKeyword({name: dKeyword, page});
+      searchKeyword({name: dKeyword, page: dPage});
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [dKeyword]);
+  }, [dKeyword, dPage]);
 
-  return {loading, imageList, keyword, onProcessingAsset, setKeyword};
+  return {
+    page,
+    loading,
+    imageList,
+    keyword,
+    onPrev,
+    onNext,
+    onProcessingAsset,
+    onSetKeyword,
+  };
 }

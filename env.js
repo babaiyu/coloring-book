@@ -1,7 +1,7 @@
 // Environment variables
 
-// Development
-export const BASE_URL = 'https://api-coloring-book.up.railway.app'; // Use local IP or any public url!
-
 // Production
-// export const BASE_URL = 'https://api.coloringbook.my.id/api';
+export const BASE_URL = 'https://api-coloring-book.up.railway.app';
+
+// Local
+// export const BASE_URL = 'http://192.168.100.178:1337';

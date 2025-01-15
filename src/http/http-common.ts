@@ -16,15 +16,15 @@ const axiosInstance = axios.create({
 const instance = setupCache(axiosInstance);
 
 // Logging the API
-const log_api = (method: string, path: string) => {
-  console.log(`${method} - ${path}`);
-};
+// const log_api = (method: string, path: string) => {
+//   console.log(`${method} - ${path}`);
+// };
 
 // Create httpCommon function
 export default function httpCommon() {
   return {
     async get(url: string, config?: AxiosRequestConfig) {
-      log_api('GET', url);
+      // log_api('GET', url);
       return await instance.get(url, config);
     },
   };

@@ -1,7 +1,7 @@
 import {useStyles} from 'osmicsx';
 import React from 'react';
 import {FlatList, TouchableOpacity, View} from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome6';
+import Icon from '@react-native-vector-icons/fontawesome6';
 import {colors, kidsColors, TypeObject} from '../../constants';
 import {useTools} from '../../stores';
 import clsx from 'clsx';
@@ -61,7 +61,12 @@ export default function PaintingFooter() {
         )}>
         {/* Brush size */}
         <TouchableOpacity activeOpacity={0.75} style={apply(BTN_STYLE)}>
-          <Icon name="paintbrush" color={color} size={ICON_SIZE} />
+          <Icon
+            name="paintbrush"
+            iconStyle="solid"
+            color={color}
+            size={ICON_SIZE}
+          />
         </TouchableOpacity>
 
         {/* Brush / eraser size */}
@@ -88,6 +93,7 @@ export default function PaintingFooter() {
           )}>
           <Icon
             name="eraser"
+            iconStyle="solid"
             color={eraserMode ? colors.white : colors.black}
             size={ICON_SIZE}
           />
@@ -106,6 +112,7 @@ export default function PaintingFooter() {
           )}>
           <Icon
             name="arrows-to-circle"
+            iconStyle="solid"
             color={isZooming ? colors.white : colors.black}
             size={ICON_SIZE}
           />
