@@ -12,7 +12,7 @@ function Drawing() {
   const {assetID} = useStoreSearch();
 
   return (
-    <PaintingProvider bareImage={assetID?.url ?? ''}>
+    <PaintingProvider bareImage={assetID ?? ''}>
       <PaintingHeader />
       <View style={apply('flex justify-center items-center')}>
         <PaintingBody />

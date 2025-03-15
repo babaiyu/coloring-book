@@ -18,7 +18,7 @@ interface State {
     data: any[];
     meta: any;
   };
-  assetID: any;
+  assetID: string;
   searchKeyword: (_props: {name?: string; page?: number}) => Promise<any>;
   getCategories: (_props: {page?: number}) => Promise<any>;
   getSubCategories: (_props: {slug: string; page?: number}) => Promise<any>;
@@ -40,7 +40,7 @@ const initialState = {
     data: [],
     meta: null,
   },
-  assetID: null,
+  assetID: '',
 };
 
 const useStoreSearch = create<State>()(set => ({
@@ -100,7 +100,7 @@ const useStoreSearch = create<State>()(set => ({
     }
   },
   async getAssetID(resource_id) {
-    set({loading: true, assetID: null});
+    set({loading: true, assetID: ''});
 
     try {
       const res = await apiGetAssetID(resource_id);
@@ -109,7 +109,7 @@ const useStoreSearch = create<State>()(set => ({
       // Find the image first!
       if (arrData.length > 0) {
         // Pick first asset as main object for drawing!
-        set({assetID: arrData[0]});
+        set({assetID: arrData[0]?.url ?? ''});
         return res?.data;
       }
 
@@ -121,7 +121,7 @@ const useStoreSearch = create<State>()(set => ({
     }
   },
   resetAssetID() {
-    set({assetID: null});
+    set({assetID: ''});
   },
 }));
 
