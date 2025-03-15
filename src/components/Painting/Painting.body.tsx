@@ -4,8 +4,9 @@ import {
   Group,
   Path,
   Skia,
-  useImage,
-  Image,
+  useSVG,
+  ImageSVG,
+  Mask,
 } from '@shopify/react-native-skia';
 import Animated, {
   useAnimatedStyle,
@@ -61,7 +62,7 @@ export default function PaintingBody() {
   // Path drawing color
   const path = useSharedValue(Skia.Path.Make());
   const paint = useSharedValue(Skia.Paint());
-  const image = useImage(bareImage || '');
+  const imageSvg = useSVG(bareImage);
   const [count, setCount] = useState(0);
 
   // Zoom value
@@ -191,7 +192,21 @@ export default function PaintingBody() {
         <Canvas
           ref={drawRef}
           style={apply('absolute', `w-${drawWidth} h-${drawHeight}`)}>
-          <Group>
+          <Mask
+            mode="luminance"
+            mask={
+              <Group>
+                {imageSvg && (
+                  <ImageSVG
+                    x={0}
+                    y={0}
+                    svg={imageSvg}
+                    width={drawWidth}
+                    height={drawHeight}
+                  />
+                )}
+              </Group>
+            }>
             <Fill color="#FFFFFF" />
             {lines.map((line, index) => (
               <Path
@@ -206,18 +221,7 @@ export default function PaintingBody() {
             ))}
 
             {paintingPen}
-
-            {!!image && (
-              <Image
-                x={0}
-                y={0}
-                image={image}
-                width={drawWidth}
-                height={drawHeight}
-                fit="contain"
-              />
-            )}
-          </Group>
+          </Mask>
         </Canvas>
       </Animated.View>
     </GestureDetector>
