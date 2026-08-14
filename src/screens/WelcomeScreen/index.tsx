@@ -1,17 +1,12 @@
 import {useStyles} from 'osmicsx';
 import React from 'react';
-import {
-  Image,
-  SafeAreaView,
-  ScrollView,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import {Image, ScrollView, TouchableOpacity, View} from 'react-native';
 import Icon from '@react-native-vector-icons/fontawesome6';
 import Text from '../../components/Text';
 import {coreStyles} from '../../styles';
 import {colors} from '../../constants';
 import useController from './useController';
+import {SafeAreaView} from 'react-native-safe-area-context';
 
 export default function WelcomeScreen() {
   const {apply} = useStyles();

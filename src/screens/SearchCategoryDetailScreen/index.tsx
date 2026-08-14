@@ -1,11 +1,12 @@
 import {useStyles} from 'osmicsx';
 import React, {useId} from 'react';
-import {FlatList, SafeAreaView} from 'react-native';
+import {FlatList} from 'react-native';
 import {coreStyles} from '../../styles';
 import ItemDetail from './components/ItemDetail';
 import {Props} from './types';
 import useController from './useController';
 import HeaderDetail from './components/HeaderDetail';
+import {SafeAreaView} from 'react-native-safe-area-context';
 
 export default function SearchCategoryDetailScreen(props: Props) {
   const flatlistID = useId();

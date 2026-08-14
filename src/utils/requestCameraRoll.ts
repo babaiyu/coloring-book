@@ -11,7 +11,7 @@ export default async function requestCameraRoll() {
 
   try {
     await requestMultiple(permissionsToAsk);
-  } catch (error) {
+  } catch {
     //
   }
 }

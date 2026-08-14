@@ -1,0 +1,1 @@
+- Prefers plans to be documented as markdown files before implementation begins. When a non-trivial, multi-step change is proposed, write out the plan first and get approval before applying changes. Confidence: 0.8
