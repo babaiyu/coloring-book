@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Shell(curl -sL -o /Volumes/macmini_babaiyu/babaiyu/personal_project/coloring-book/android/gradle/wrapper/gradle-wrapper.jar \"https://raw.githubusercontent.com/gradle/gradle/v9.3.1/gradle/wrapper/gradle-wrapper.jar\" && echo \"OK: $(ls -la /Volumes/macmini_babaiyu/babaiyu/personal_project/coloring-book/android/gradle/wrapper/gradle-wrapper.jar | awk '{print $5}') bytes\")",
+      "Shell(rm:*)",
+      "Shell(node -e const p = require('./package.json'); console.log('react:', p.dependencies.react); console.log('react-native:', p.dependencies['react-native']);)"
+    ],
+    "deny": [],
+    "defaultMode": "default"
+  }
+}

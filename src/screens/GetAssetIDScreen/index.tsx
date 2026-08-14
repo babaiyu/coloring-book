@@ -1,10 +1,11 @@
 import React from 'react';
 import {Props} from './types';
-import {ActivityIndicator, SafeAreaView, View} from 'react-native';
+import {ActivityIndicator, View} from 'react-native';
 import {useStyles} from 'osmicsx';
 import {coreStyles} from '../../styles';
 import Text from '../../components/Text';
 import useController from './useController';
+import {SafeAreaView} from 'react-native-safe-area-context';
 
 export default function GetAssetIDScreen(props: Props) {
   const {apply} = useStyles();

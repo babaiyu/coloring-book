@@ -1,6 +1,6 @@
 import {useStyles} from 'osmicsx';
 import React from 'react';
-import {FlatList, SafeAreaView, View} from 'react-native';
+import {FlatList, View} from 'react-native';
 import {coreStyles} from '../../styles';
 import {TextInput} from '../../components/Forms';
 import ItemKeyword from './components/ItemKeyword';
@@ -8,6 +8,7 @@ import useController from './useController';
 import HeaderKeyword from './components/HeaderKeyword';
 import {Props} from './types';
 import Pagination from '../../components/Pagination';
+import {SafeAreaView} from 'react-native-safe-area-context';
 
 export default function SearchByKeywordScreen(props: Props) {
   const {apply} = useStyles();

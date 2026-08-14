@@ -1,10 +1,11 @@
 import {
   DataSource,
   ImageFormat,
-  SkiaDomView,
+  useCanvasRef,
+  // SkiaDomView,
   type SkPaint,
   type SkPath,
-  useCanvasRef,
+  type CanvasRef,
 } from '@shopify/react-native-skia';
 import React, {createContext, ReactNode, RefObject} from 'react';
 import * as RNFS from '@dr.pogodin/react-native-fs';
@@ -25,7 +26,7 @@ type HistoryType = {
 
 export type PaintingProviderType = {
   bareImage?: DataSource;
-  drawRef?: RefObject<SkiaDomView>;
+  drawRef?: RefObject<CanvasRef | null>;
   strokes?: Array<number>;
   saveImage: Function;
   history: {
@@ -121,7 +122,7 @@ export default function PaintingProvider({
 
       await RNFS.unlink(imgAddress);
       Alert.alert('Success', 'Berhasil menyimpan gambar');
-    } catch (error) {
+    } catch {
       Alert.alert('Maaf...', 'Gagal menyimpan gambar, silahkan coba kembali!');
     }
   };

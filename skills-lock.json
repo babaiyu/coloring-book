@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "skills": {
+    "upgrade-react-native": {
+      "source": "react-native-community/skills",
+      "sourceType": "github",
+      "skillPath": "upgrade-react-native/SKILL.md",
+      "computedHash": "bbf11d306aa7fc4c53b9e806b8626a84e6b56ffa302a057e959b38871267e020"
+    },
+    "vercel-react-native-skills": {
+      "source": "vercel-labs/agent-skills",
+      "sourceType": "github",
+      "skillPath": "skills/react-native-skills/SKILL.md",
+      "computedHash": "41d24eafa7c3d82e270439808f7cfbc4d51aeb2d14f2809a2267c16275784d06"
+    }
+  }
+}

@@ -57,7 +57,7 @@ const useStoreSearch = create<State>()(set => ({
         },
       });
       return res.data;
-    } catch (error: any) {
+    } catch {
       return undefined;
     } finally {
       set({loading: false});
@@ -75,7 +75,7 @@ const useStoreSearch = create<State>()(set => ({
         },
       });
       return res?.data;
-    } catch (error: any) {
+    } catch {
       return undefined;
     } finally {
       set({loading: false});
@@ -93,7 +93,7 @@ const useStoreSearch = create<State>()(set => ({
         },
       });
       return res?.data;
-    } catch (error: any) {
+    } catch {
       return undefined;
     } finally {
       set({loading: false});
@@ -114,7 +114,7 @@ const useStoreSearch = create<State>()(set => ({
       }
 
       return undefined;
-    } catch (error: any) {
+    } catch {
       return undefined;
     } finally {
       set({loading: false});
